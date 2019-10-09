@@ -75,14 +75,23 @@ WSGI_APPLICATION = 'swiper.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+    # Django默认配置使用sqlite3数据库
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+    # 配置使用mysql
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-	'NAME': 'MyDjango',
-	"HOST": '127.0.0.1',
-	'USER': 'root',
-	'PASSWORD': '1035363944',	
+        'ENGINE': 'django.db.backends.mysql',  # 数据库产品
+        'NAME': 'restful_django',  # 数据库名
+        'HOST': 'localhost',  # 主机地址，本机使用localhost，生产环境为实际主机ip
+        'PORT': '3306',  # 端口
+        'USER': 'root',  # 用户名
+        'PASSWORD': '1035363944',  # 密码
     }
 }
+
+
 
 
 # Password validation
